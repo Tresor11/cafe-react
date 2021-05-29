@@ -1,21 +1,22 @@
 /* eslint-disable camelcase */
 import {
-  FETCH_PRODUCTS_ERROR,
+  FETCH_ITEMS_ERROR,
+  FETCH_ITEMS_PENDING,
   FETCH_SINGLE_SUCCESS,
-  FETCH_PRODUCTS_SUCCESS,
+  FETCH_ITEMS_SUCCESS,
 } from './action-type';
 
-const fetchItemsPending = type => ({
-  type,
+const fetchItemsPending = () => ({
+  type:FETCH_ITEMS_PENDING,
 });
 
 const fetchItemsSuccess = playload => ({
-  type: FETCH_PRODUCTS_SUCCESS,
+  type: FETCH_ITEMS_SUCCESS,
   playload,
 });
 
 const fetchItemsError = playload => ({
-  type: FETCH_PRODUCTS_ERROR,
+  type: FETCH_ITEMS_ERROR,
   playload,
 });
 
