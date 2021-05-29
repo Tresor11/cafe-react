@@ -10,19 +10,19 @@ const fetchItemsPending = () => ({
   type:FETCH_ITEMS_PENDING,
 });
 
-const fetchItemsSuccess = playload => ({
+const fetchItemsSuccess = payload => ({
   type: FETCH_ITEMS_SUCCESS,
-  playload,
+  payload,
 });
 
-const fetchItemsError = playload => ({
+const fetchItemsError = payload => ({
   type: FETCH_ITEMS_ERROR,
-  playload,
+  payload,
 });
 
-const fetchSingleItem = playload => ({
+const fetchSingleItem = payload => ({
   type: FETCH_SINGLE_SUCCESS,
-  playload,
+  payload,
 });
 
 const BASE_URL = 'https://cafe-react-api.herokuapp.com';
