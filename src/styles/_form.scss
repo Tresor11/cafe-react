@@ -1,0 +1,52 @@
+.input-cont{
+  display: flex;
+  padding: 20px 0px;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+  margin: 5px;
+  // background-color: royalblue;
+  label{
+    width: 20%;
+  }
+  input{
+    padding: 5px;
+    width: 80%;
+  }
+  select{
+    padding: 5px;
+    width: 80%;
+  }
+}
+
+.blue-button{
+  background-color: #3b86ff;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Choose photo';
+  display: inline-block;
+  background-color: #3b86ff;
+  border: none;
+  padding: 10px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 3px;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
