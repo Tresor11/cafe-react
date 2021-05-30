@@ -10,7 +10,7 @@ const ItemPreview = ({ props }) => {
     <div className="item-prev">
       <Link to={`/items/${id}`}>
         <div className="img-cont">
-          <img src={image.url}/>
+          <img src={image.url} className="responsive-img" alt="item_image" />
         </div>
         <div className="text-cont">
           <div className="item-name">

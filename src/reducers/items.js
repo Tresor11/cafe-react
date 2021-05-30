@@ -1,6 +1,6 @@
 import {
   FETCH_ITEMS_ERROR,
-  FETCH_ITEMS_PENDING,
+  FETCH_SINGLE_PENDING,
   FETCH_ITEMS_SUCCESS,
 } from '../actions/action-type';
 
@@ -12,7 +12,7 @@ const initialState = {
 
 const itemsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_ITEMS_PENDING:
+    case FETCH_SINGLE_PENDING:
       return {
         ...state,
         pending: true,

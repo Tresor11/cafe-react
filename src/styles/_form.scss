@@ -1,3 +1,7 @@
+form{
+  padding: 0px 30px;
+}
+
 .input-cont{
   display: flex;
   padding: 20px 0px;
@@ -49,4 +53,11 @@
 }
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.form-nav{
+  display: flex;
+  align-items: center;
+  padding: 30px 30px;
+  color: #45445f;
 }

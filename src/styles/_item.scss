@@ -1,65 +1,77 @@
-.item-list{
+.item-list {
   width: 90%;
   height: 100%;
   margin: auto;
-  .item-nav{
+
+  .wrap-items {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 0px;
-    color: #45445f;
-  }
-  .wrap-items{
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
   }
 }
 
-.item-prev{
-  a{
+.item-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px;
+  color: #45445f;
+}
+
+.item-prev {
+  a {
     text-decoration: none;
   }
+
   background-color: white;
   display: flex;
+  margin-bottom: 40px;
   flex-direction: column;
   width: 30%;
-  .img-cont{
+
+  .img-cont {
     height: 40vh;
     width: 100%;
     display: flex;
-    img{
-      max-height: 40vh;
-      width: 100%;
-    }
   }
-  .text-cont{
+
+  .text-cont {
     padding: 10px 25px;
     display: flex;
     justify-content: space-between;
     font-family: sans-serif;
     align-items: center;
-    .item-name{
-      font-size: 20px;
-      font-weight: bold;
-      .category{
-        color: #7e808b;
-      }
-      .name{
-        color: #4d4f5c;
-      }
-      p{
-        margin: 10px 0px;
-      }
-    }
-    .item-price{
-      font-size: 20px;
-      color: #8b8b8f;
-    }
   }
 }
 
-.blue-button{
+.item-name {
+  font-size: 20px;
+  font-weight: bold;
+
+  .category {
+    color: #7e808b;
+  }
+
+  .name {
+    color: #4d4f5c;
+  }
+
+  p {
+    margin: 10px 0px;
+  }
+}
+
+.item-price {
+  font-size: 20px;
+  color: #8b8b8f;
+}
+
+.responsive-img {
+  max-height: 45vh;
+  width: 100%;
+}
+
+.blue-button {
   background-color: #3b86ff;
   padding: 10px;
   color: white;
@@ -67,14 +79,48 @@
   border: none;
 }
 
-.nav{
+.nav {
   padding: 20px;
   background-color: white;
-  a{
+
+  a {
     text-decoration: none;
-    h4{
+
+    h4 {
       margin: 0px;
       color: #45445f;
+    }
+  }
+}
+
+.item-details {
+  padding: 0px 30px;
+
+  .item-details-cont {
+    display: flex;
+    height: auto;
+    width: 100%;
+
+    .item-image {
+      width: 40%;
+    }
+
+    .item-info {
+      background-color: white;
+      width: 40%;
+      padding: 0px 20px;
+
+      .buttons-cont {
+        margin: 20px 0px;
+
+        button {
+          margin-right: 10px;
+
+          &.red {
+            background-color: #ff3b3b !important;
+          }
+        }
+      }
     }
   }
 }

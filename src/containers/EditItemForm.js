@@ -1,36 +1,38 @@
 import React from "react";
 import { connect } from "react-redux";
-import createItem from "../actions/createItem";
+import editItem from "../actions/editItem";
 import { useInput, resetInputs } from "../helpers/index";
 import { useHistory } from "react-router-dom";
 
 const ItemForm = (props) => {
-  const category = useInput("");
-  const name = useInput("");
+  const { single } = props.store;
+  const itemDetails = single.details;
+  const category = useInput(itemDetails.category);
+  const name = useInput(itemDetails.name);
   const image = useInput("");
-  const price = useInput("");
+  const price = useInput(itemDetails.price);
   let history = useHistory();
   const callback = () => {
-    resetInputs(name, category);
-    history.push("/");
+    resetInputs(name, category, price, image);
+    history.push(`/items/${single.details.id}`);
   };
   const submitForm = (event) => {
-    const { createItem } = props;
+    const { editItem } = props;
     const data = {
       name: name.value,
       category: category.value,
       price: price.value,
-      image: image.value,
+      ...(image.value !==""? {image: image.value}: {})
     };
 
-    createItem(data, callback);
+    editItem(data,single.details.id, callback);
     event.preventDefault();
   };
   return (
     <div className="container">
       <div>
         <div className="form-nav">
-          <h4>CREATE ITEM</h4>
+          <h4>EDIT ITEM</h4>
         </div>
         <form onSubmit={submitForm}>
           <div className="input-cont">
@@ -40,7 +42,6 @@ const ItemForm = (props) => {
               value={category.value}
               onChange={category.onChange}
               name="category"
-              required
             >
               <option value="">Select type</option>
               <option value="Side">Side</option>
@@ -52,7 +53,6 @@ const ItemForm = (props) => {
             <label>Name</label>
             <input
               type="text"
-              required
               name="name"
               value={name.value}
               onChange={name.onChange}
@@ -63,7 +63,6 @@ const ItemForm = (props) => {
             <label>Price</label>
             <input
               type="number"
-              required
               name="price"
               value={price.value}
               onChange={price.onChange}
@@ -74,7 +73,6 @@ const ItemForm = (props) => {
             <label>Image</label>
             <input
               type="file"
-              required
               name="image"
               className="custom-file-input"
               onChange={image.handleFileChange}
@@ -84,7 +82,7 @@ const ItemForm = (props) => {
           <div>
             <p>
               <button type="submit" className="blue-button">
-                CREATE
+                UPDATE
               </button>
             </p>
           </div>
@@ -93,10 +91,11 @@ const ItemForm = (props) => {
     </div>
   );
 };
+
 const mapStateToProps = (store) => ({ store });
 
 const mapDispatchToProps = {
-  createItem,
+  editItem
 };
 
 ItemForm.defaultProps = {

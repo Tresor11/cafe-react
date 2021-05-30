@@ -1,27 +1,30 @@
 import {
-  fetchItemsPending, fetchItemsSuccess, fetchItemsError, BASE_URL,
+  fetchSinglePending, fetchSingleItem, fetchItemsError, BASE_URL,
 } from './index';
 
-import { FETCH_ITEMS_PENDING } from './action-type';
-
-function fetchItems() {
+function fetchSingle(id, method="GET") {
   return dispatch => {
-    dispatch(fetchItemsPending(FETCH_ITEMS_PENDING));
-    fetch(`${BASE_URL}/items`, {
+    dispatch(fetchSinglePending());
+    const requestOptions = {
+      method,
       headers: {
         'Content-Type': 'application/json',
       },
-    })
+    };
+
+    fetch(`${BASE_URL}/items/${id}`, requestOptions)
       .then(res => res.json())
       .then(res => {
         if (res.error) {
           throw res.error;
         }
-        dispatch(fetchItemsSuccess(res));
+
+
+        dispatch(fetchSingleItem(res));
       })
       .catch(error => {
         dispatch(fetchItemsError(error));
       });
   };
 }
-export default fetchItems;
+export default fetchSingle;
