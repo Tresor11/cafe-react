@@ -22,7 +22,7 @@ const singleItemReducer = (state = initialState, action) => {
       return {
         ...state,
         pending: false,
-        details: action.payload,
+        details: action.payload.item,
       };
     case FETCH_ITEMS_ERROR:
       return {
