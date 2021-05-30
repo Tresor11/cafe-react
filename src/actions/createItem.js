@@ -2,7 +2,7 @@ import { fetchItemsPending, BASE_URL } from './index';
 // import { inputValidation, loadingIcon } from '../helper/index';
 import { CREATE_ITEM_PENDING } from './action-type';
 
-function createItem(data, token, callBack) {
+function createItem(data, callBack) {
   return dispatch => {
     // loadingIcon();
     dispatch(fetchItemsPending(CREATE_ITEM_PENDING));
@@ -12,9 +12,6 @@ function createItem(data, token, callBack) {
     }
     const requestOptions = {
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
       body: event,
     };
     fetch(`${BASE_URL}/items`, requestOptions)
