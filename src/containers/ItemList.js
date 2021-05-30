@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import fetchItems from '../actions/fetchItems';
 import ItemPreview from '../components/ItemPreview';
-import Nav from '../components/Nav';
 import Spiner from '../components/Spiner';
 import { Link } from 'react-router-dom';
 
@@ -15,13 +14,12 @@ const ItemList = props => {
 
   const shouldComponentRender = () => {
     if (store.items.pending === true) return false;
-    console.log(store)
     return true;
   };
 
   return (
     <div className="item-list">
-      <div class="item-nav">
+      <div className="item-nav">
         <h4>Menu</h4>
         <Link to={'/newitem'} className="blue-button">
           Add menu item

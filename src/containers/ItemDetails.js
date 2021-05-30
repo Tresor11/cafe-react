@@ -28,12 +28,12 @@ const ItemDetails = (props) => {
     <div>
       {shouldComponentRender() === true ? (
         <div className="item-details container">
-          <div class="item-nav">
+          <div className="item-nav">
             <h4>View Item</h4>
           </div>
           <div className="item-details-cont">
             <div className="item-image">
-              <img src={image.url} className="responsive-img" />
+              <img src={image.url} className="responsive-img" alt="item_image" />
             </div>
             <div className="item-info">
               <div className="item-name">
@@ -45,9 +45,9 @@ const ItemDetails = (props) => {
               </div>
               <div className="buttons-cont">
                 <Link to={`/items/${id}/edit`}>
-                  <button class="blue-button">Edit item</button>
+                  <button className="blue-button">Edit item</button>
                 </Link>
-                <button class="blue-button red" onClick={deleteItem}>
+                <button className="blue-button red" onClick={deleteItem}>
                   Delete item
                 </button>
               </div>

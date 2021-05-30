@@ -3,7 +3,6 @@ import {
 } from './index';
 
 function fetchSingle(id, method="GET") {
-  console.log("SINGLE")
   return dispatch => {
     dispatch(fetchSinglePending());
     const requestOptions = {
@@ -20,7 +19,7 @@ function fetchSingle(id, method="GET") {
           throw res.error;
         }
 
-        
+
         dispatch(fetchSingleItem(res));
       })
       .catch(error => {

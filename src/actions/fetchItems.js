@@ -17,8 +17,6 @@ function fetchItems() {
         if (res.error) {
           throw res.error;
         }
-        console.group("fetchItems");
-        console.log(res);
         dispatch(fetchItemsSuccess(res));
       })
       .catch(error => {

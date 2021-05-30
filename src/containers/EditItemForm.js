@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 import editItem from "../actions/editItem";
 import { useInput, resetInputs } from "../helpers/index";
 import { useHistory } from "react-router-dom";
@@ -25,8 +24,6 @@ const ItemForm = (props) => {
       price: price.value,
       ...(image.value !==""? {image: image.value}: {})
     };
-    console.log('data');
-    console.log(data);
 
     editItem(data,single.details.id, callback);
     event.preventDefault();
@@ -103,28 +100,6 @@ const mapDispatchToProps = {
 
 ItemForm.defaultProps = {
   history: {},
-};
-
-ItemForm.propTypes = {
-  store: PropTypes.shape({
-    items: PropTypes.shape({}),
-    user: PropTypes.shape({
-      auth_token: PropTypes.string.isRequired,
-      details: PropTypes.shape({
-        favorites: PropTypes.arrayOf(PropTypes.shape({})),
-        details: PropTypes.shape({
-          admin: PropTypes.bool,
-          image: PropTypes.shape({}),
-          name: PropTypes.string,
-          email: PropTypes.string,
-        }),
-      }),
-    }),
-  }).isRequired,
-  createItem: PropTypes.func.isRequired,
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemForm);
