@@ -2,7 +2,7 @@ import {
   FETCH_ITEMS_ERROR,
   FETCH_ITEMS_PENDING,
   FETCH_ITEMS_SUCCESS,
-} from './action-type';
+} from '../actions/action-type';
 
 const initialState = {
   pending: false,
@@ -21,13 +21,13 @@ const itemsReducer = (state = initialState, action) => {
       return {
         ...state,
         pending: false,
-        items: action.playload,
+        items: action.payload,
       };
     case FETCH_ITEMS_ERROR:
       return {
         ...state,
         pending: false,
-        error: action.playload,
+        error: action.payload,
       };
     default:
       return state;
