@@ -4,9 +4,11 @@ import ItemForm from '../containers/ItemForm';
 import ItemList from '../containers/ItemList';
 // import ItemDetails from '../containers/itemDetails';
 import EditItem from '../containers/EditItem';
+import Nav from './Nav'
 
 const App = () => (
   <div>
+    <Nav/>
     <Switch>
       <Route path="/" component={ItemList} exact />
       {/* <Route path="/items/:id" component={ItemDetails} exact /> */}
