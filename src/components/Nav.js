@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Nav=()=>{
-  return(
+const Nav = () => {
+  return (
     <div className="nav">
-    <h4>CAFE REACT</h4>
+      <Link to="/">
+        <h4>CAFE REACT</h4>
+      </Link>
     </div>
-  )
-}
+  );
+};
 
 export default Nav;
