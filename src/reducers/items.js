@@ -2,12 +2,12 @@ import {
   FETCH_ITEMS_ERROR,
   FETCH_SINGLE_PENDING,
   FETCH_ITEMS_SUCCESS,
-} from '../actions/action-type';
+} from "../actions/action-type";
 
 const initialState = {
   pending: false,
   items: [],
-  error: '',
+  error: "",
 };
 
 const itemsReducer = (state = initialState, action) => {

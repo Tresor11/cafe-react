@@ -32,7 +32,7 @@ const ItemForm = (props) => {
         <div className="form-nav">
           <h4>CREATE ITEM</h4>
         </div>
-        <form  className="form-control" onSubmit={submitForm}>
+        <form className="form-control" onSubmit={submitForm}>
           <div className="input-cont field">
             <label htmlFor="category">Type</label>
             <select
@@ -87,7 +87,8 @@ const ItemForm = (props) => {
           <div>
             <p>
               <button type="submit" className="blue-button">
-                CREATE
+                <span>Add menu item</span>
+                <div className="loader"></div>
               </button>
             </p>
           </div>

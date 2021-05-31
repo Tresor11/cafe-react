@@ -33,7 +33,11 @@ const ItemDetails = (props) => {
           </div>
           <div className="item-details-cont">
             <div className="item-image">
-              <img src={image.url} className="responsive-img" alt="item_image" />
+              <img
+                src={image.url}
+                className="responsive-img"
+                alt="item_image"
+              />
             </div>
             <div className="item-info">
               <div className="item-name">
@@ -45,10 +49,12 @@ const ItemDetails = (props) => {
               </div>
               <div className="buttons-cont">
                 <Link to={`/items/${id}/edit`}>
-                  <button className="blue-button">Edit item</button>
+                  <button className="blue-button">
+                    <span>Edit item</span>
+                  </button>
                 </Link>
                 <button className="blue-button red" onClick={deleteItem}>
-                  Delete item
+                  <span>Delete item</span>
                 </button>
               </div>
             </div>
