@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import fetchItems from '../actions/fetchItems';
-import ItemPreview from '../components/ItemPreview';
-import Spiner from '../components/Spiner';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import fetchItems from "../actions/fetchItems";
+import ItemPreview from "../components/ItemPreview";
+import Spiner from "../components/Spiner";
+import { Link } from "react-router-dom";
 
-const ItemList = props => {
+const ItemList = (props) => {
   const { fetchItems, store } = props;
   useEffect(() => {
     fetchItems();
@@ -21,16 +21,21 @@ const ItemList = props => {
     <div className="item-list">
       <div className="item-nav">
         <h4>Menu</h4>
-        <Link to={'/newitem'} className="blue-button">
-          Add menu item
+        <Link to={"/newitem"} className="blue-button">
+          <span>Add menu item</span>
+          <div className="loader"></div>
         </Link>
       </div>
       <div>
         {shouldComponentRender() === true ? (
           <div className="wrap-items">
-            {store.items.items.map(el => <ItemPreview key={el.id} props={el} />)}
+            {store.items.items.map((el) => (
+              <ItemPreview key={el.id} props={el} />
+            ))}
           </div>
-        ) : <Spiner /> }
+        ) : (
+          <Spiner />
+        )}
       </div>
     </div>
   );
@@ -40,14 +45,14 @@ const mapDispatchToProps = {
   fetchItems,
 };
 
-const mapStateToProps = store => ({ store });
+const mapStateToProps = (store) => ({ store });
 
 ItemList.propTypes = {
   store: PropTypes.shape({
     items: PropTypes.shape({
       pending: PropTypes.bool,
       items: PropTypes.arrayOf(PropTypes.shape({})),
-    })
+    }),
   }).isRequired,
   fetchItems: PropTypes.func.isRequired,
 };

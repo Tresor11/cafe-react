@@ -1,8 +1,8 @@
-import { combineReducers, applyMiddleware, createStore } from 'redux';
+import { combineReducers, applyMiddleware, createStore } from "redux";
 
-import thunk from 'redux-thunk';
-import itemsReducer from './items';
-import singleItemReducer from './singleItem';
+import thunk from "redux-thunk";
+import itemsReducer from "./items";
+import singleItemReducer from "./singleItem";
 
 const finalReducer = combineReducers({
   items: itemsReducer,

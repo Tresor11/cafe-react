@@ -32,9 +32,9 @@ const ItemForm = (props) => {
         <div className="form-nav">
           <h4>CREATE ITEM</h4>
         </div>
-        <form onSubmit={submitForm}>
-          <div className="input-cont">
-            <label>Type</label>
+        <form className="form-control" onSubmit={submitForm}>
+          <div className="input-cont field">
+            <label htmlFor="category">Type</label>
             <select
               id="category"
               value={category.value}
@@ -49,33 +49,36 @@ const ItemForm = (props) => {
           </div>
 
           <div className="input-cont">
-            <label>Name</label>
+            <label htmlFor="name">Name</label>
             <input
               type="text"
               required
               name="name"
+              id="name"
               value={name.value}
               onChange={name.onChange}
             />
           </div>
 
           <div className="input-cont">
-            <label>Price</label>
+            <label htmlFor="price">Price</label>
             <input
               type="number"
               required
               name="price"
+              id="price"
               value={price.value}
               onChange={price.onChange}
             />
           </div>
 
           <div className="input-cont">
-            <label>Image</label>
+            <label htmlFor="image">Image</label>
             <input
               type="file"
               required
               name="image"
+              id="image"
               className="custom-file-input"
               onChange={image.handleFileChange}
             />
@@ -84,7 +87,8 @@ const ItemForm = (props) => {
           <div>
             <p>
               <button type="submit" className="blue-button">
-                CREATE
+                <span>Add menu item</span>
+                <div className="loader"></div>
               </button>
             </p>
           </div>

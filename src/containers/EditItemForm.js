@@ -22,10 +22,10 @@ const ItemForm = (props) => {
       name: name.value,
       category: category.value,
       price: price.value,
-      ...(image.value !==""? {image: image.value}: {})
+      ...(image.value !== "" ? { image: image.value } : {}),
     };
 
-    editItem(data,single.details.id, callback);
+    editItem(data, single.details.id, callback);
     event.preventDefault();
   };
   return (
@@ -82,7 +82,8 @@ const ItemForm = (props) => {
           <div>
             <p>
               <button type="submit" className="blue-button">
-                UPDATE
+                <span>Update item</span>
+                <div className="loader"></div>
               </button>
             </p>
           </div>
@@ -95,7 +96,7 @@ const ItemForm = (props) => {
 const mapStateToProps = (store) => ({ store });
 
 const mapDispatchToProps = {
-  editItem
+  editItem,
 };
 
 ItemForm.defaultProps = {
