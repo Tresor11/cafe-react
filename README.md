@@ -1,71 +1,95 @@
-# Getting Started with Create React App
+### This project is a single page application built with react and redux 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### The application is a cafe menu it uses [this rails API](https://github.com/Tresor11/cafe-react-api/) to get the data.
 
-## Available Scripts
+<hr />
 
-In the project directory, you can run:
+> The `/` route is a list of the available items from which you can select a specific items to see more details.
 
-### `yarn start`
+![screenshot](./home.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<hr />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> The `/items/id` route shows the item details with two buttons for edit and delete.
 
-### `yarn test`
+![screenshot](./item.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<hr />
 
-### `yarn build`
+> the `/newitem` and `/items/id/edit` routes shows respectively a form form creating an item and form editing an item.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![screenshot](./form.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Built With
 
-### `yarn eject`
+- javaScript
+- React
+- Rails
+- Redux
+- Node js
+- Netlify
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Live Demo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Live Demo Link](https://cafe-react.netlify.app/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Getting Started
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Here are the steps to follow in order to get this project on your local computer.
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`node v12.16.3 +`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm v6.14.4 +`
 
-### Code Splitting
+### Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+clone this repo by typing `git clone`
 
-### Analyzing the Bundle Size
+### Install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+install the dependacies by typing `npm install`
 
-### Making a Progressive Web App
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+start the local server by running `npm start`
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+this project is deployed on heroku
 
-### `yarn build` fails to minify
+to get the deployment build of the code run `npm run build`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Testing
+
+this project uses jest from testing , to run the tests type `npm test` 
+
+## Authors
+
+👤 **Tresor bireke**
+
+- Github: [@Tresor11](https://github.com/Tresor11)
+- Twitter: [@Tbireke](https://twitter.com/Tbireke)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
 
