@@ -46,7 +46,7 @@ Here are the steps to follow in order to get this project on your local computer
 
 ### Setup
 
-clone this repo by typing `https://github.com/Tresor11/cafe-react.git`
+clone this repo by typing `git clone https://github.com/Tresor11/cafe-react.git`
 
 ### Install
 
