@@ -46,7 +46,7 @@ Here are the steps to follow in order to get this project on your local computer
 
 ### Setup
 
-clone this repo by typing `git clone`
+clone this repo by typing `https://github.com/Tresor11/cafe-react.git`
 
 ### Install
 
@@ -58,7 +58,7 @@ start the local server by running `npm start`
 
 ### Deployment
 
-this project is deployed on heroku
+this project is deployed on netlify
 
 to get the deployment build of the code run `npm run build`
 
