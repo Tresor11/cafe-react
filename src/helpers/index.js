@@ -8,7 +8,12 @@ const useInput = (initialValue) => {
   };
 
   const handleFileChange = (event) => {
-    setValue(event.target.files[0]);
+    if (event.target.files[0].size > 500000) {
+      alert("Choose a picture with 500kb or less please");
+      setValue("");
+    } else {
+      setValue(event.target.files[0]);
+    }
   };
 
   return {
